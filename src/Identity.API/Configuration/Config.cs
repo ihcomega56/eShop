@@ -9,6 +9,7 @@
             {
                 new ApiResource("orders", "Orders Service"),
                 new ApiResource("basket", "Basket Service"),
+                new ApiResource("wishlist", "Wishlist Service"),
                 new ApiResource("webhooks", "Webhooks registration Service"),
             };
         }
@@ -21,6 +22,7 @@
             {
                 new ApiScope("orders", "Orders Service"),
                 new ApiScope("basket", "Basket Service"),
+                new ApiScope("wishlist", "Wishlist Service"),
                 new ApiScope("webhooks", "Webhooks registration Service"),
             };
         }
@@ -103,6 +105,7 @@
                         IdentityServerConstants.StandardScopes.OfflineAccess,
                         "orders",
                         "basket",
+                        "wishlist",
                         "webshoppingagg",
                         "webhooks"
                     },

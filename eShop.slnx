@@ -16,6 +16,7 @@
     <Project Path="src/WebApp/WebApp.csproj" />
     <Project Path="src/WebhookClient/WebhookClient.csproj" />
     <Project Path="src/Webhooks.API/Webhooks.API.csproj" />
+    <Project Path="src/Wishlist.API/Wishlist.API.csproj" />
     <Project Path="src/WebAppComponents/WebAppComponents.csproj" />
     <Project Path="src/HybridApp/HybridApp.csproj" />
     <Project Path="src/ClientApp/ClientApp.csproj" />
@@ -28,6 +29,7 @@
     <Project Path="tests/Ordering.FunctionalTests/Ordering.FunctionalTests.csproj" />
     <Project Path="tests/Ordering.UnitTests/Ordering.UnitTests.csproj" />
     <Project Path="tests/Webhooks.FunctionalTests/Webhooks.FunctionalTests.csproj" />
+    <Project Path="tests/Wishlist.FunctionalTests/Wishlist.FunctionalTests.csproj" />
     <Project Path="tests/eShop.AppHost.UnitTests/eShop.AppHost.UnitTests.csproj" />
     <Project Path="tests/ClientApp.UnitTests/ClientApp.UnitTests.csproj" />
   </Folder>
