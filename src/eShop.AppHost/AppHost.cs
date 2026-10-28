@@ -18,6 +18,7 @@ var catalogDb = postgres.AddDatabase("catalogdb");
 var identityDb = postgres.AddDatabase("identitydb");
 var orderDb = postgres.AddDatabase("orderingdb");
 var webhooksDb = postgres.AddDatabase("webhooksdb");
+var wishlistDb = postgres.AddDatabase("wishlistdb");
 
 var launchProfileName = ShouldUseHttpForEndpoints() ? "http" : "https";
 
@@ -38,6 +39,12 @@ redis.WithParentRelationship(basketApi);
 var catalogApi = builder.AddDotnetProject("catalog-api", "../Catalog.API")
     .WithReference(rabbitMq).WaitFor(rabbitMq)
     .WithReference(catalogDb);
+
+var wishlistApi = builder.AddDotnetProject("wishlist-api", "../Wishlist.API")
+    .WithReference(wishlistDb)
+    .WithReference(catalogApi).WaitFor(catalogApi)
+    .WithEnvironment("Identity__Url", identityEndpoint)
+    .WithEnvironment("Identity__Audience", "wishlist");
 
 var orderingApi = builder.AddDotnetProject("ordering-api", "../Ordering.API")
     .WithReference(rabbitMq).WaitFor(rabbitMq)
